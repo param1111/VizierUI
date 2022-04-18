@@ -1,0 +1,39 @@
+div.branch-history {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    padding: 20px 20px;
+}
+
+h1.branch-history {
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+td.workflow-command {
+    font-weight: bold;
+    color: #3b4151;
+    padding-left: 0em;
+}
+
+td.workflow-icon {
+    padding-right: 10px;
+}
+
+td.workflow-nr {
+    color: #e87722;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+    padding-left: 0px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+td.version-timestamp {
+    padding-left: 20px;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+span.branch-highlight {
+    font-weight: bold;
+}

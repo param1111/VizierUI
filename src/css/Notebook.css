@@ -1,0 +1,375 @@
+/* General notebook and cell frame */
+
+div.notebook {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+div.notebook-footer {
+    margin-top: 20px;
+}
+
+.notebook-cell {
+  --max-cell-width: calc( 100em - 22em );
+}
+
+div.notebook-cell {
+    background: #fff;
+    /*border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);*/
+    padding: 10px 10px 10px 0px;
+}
+
+div.notebook-cell-xp {
+    background: #f8ffff;
+    border-radius: .28571429rem;
+    border: 1px solid #a9d5de;
+    padding: 10px 25px 10px 0px;
+}
+
+div.notebook-cell-ro {
+    background: #fff;
+    /*border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
+    padding: 10px 10px 10px 0px;
+    margin: 10px 0px;
+}
+
+div.notebook-cell-xp-new {
+    background: #f8ffff;
+    border-radius: .28571429rem;
+    border: 1px solid #a9d5de;
+    /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
+    padding: 10px 25px 10px 0px;
+    margin: 10px 0px;
+}
+
+div.notebook-cell-error {
+    /*background: #f4e8e8;
+    border: solid 1px #ebccd1;
+    border-radius: .28571429rem;*/
+    color: #843534;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+div.notebook-header {
+    margin-bottom: 10px;
+}
+
+
+/* Divider */
+
+div.horizontal-divider {
+    color: rgba(0,0,0,.85);
+    font-size: 0.8em;
+    display: table;
+    height: auto;
+    line-height: 1;
+    margin: 1rem auto;
+    text-align: left;
+    white-space: nowrap;
+    -moz-user-select: none;
+}
+
+
+/* Cell layout table */
+
+table.cell {
+    border-spacing: 0px;
+    margin-bottom: 20px;
+    width: 100%
+}
+
+.active-cell {
+    border-left: solid 3px #303f9f;
+}
+
+.inactive-cell {
+    border-left: solid 3px transparent;
+}
+
+td.cell-index {
+    text-align: center;
+    vertical-align: top;
+    width: 60px;
+}
+
+td.cell-area {
+    vertical-align: top;
+}
+
+td.cell-button {
+    text-align: center;
+}
+
+div.cell-menu {
+    color: #3b4151;
+    margin-top: 10px;
+}
+
+p.cell-index {
+    color: #303f9f;
+    font-family: monospace,monospace;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.cell-status-icon {
+    margin: 10px 0px;
+}
+
+
+/*
+ * Frozen state
+ */
+table.cell.frozen-cell {
+    /*border-left: solid 3px #d32f2f;*/
+}
+
+td.cell-index.frozen-cell {
+    background: #c9dbdb;
+    border-radius: 5px;
+}
+
+p.cell-index.frozen-cell {
+    color: #428480;
+}
+
+table.cell.frozen-cell div.output-area div.ui.segment {
+    background: #ebf5f5;
+}
+
+/*
+ * Error state
+ */
+table.cell.inactive-cell.error-cell {
+    /*border-left: solid 3px #d32f2f;*/
+}
+
+td.cell-index.error-cell {
+    background: #ffcccc;
+}
+
+p.cell-index.error-cell {
+    color: #912d2b;
+}
+
+div.collapsed-error-cell {
+    background: #fcc;
+    width: 100%;
+    text-align: center;
+    padding: .5em;
+    margin: 0;
+}
+
+div.collapsed-error-cell i {
+    float: left;
+}
+
+/*
+ * Pending state
+ */
+table.cell.inactive-cell.pending-cell {
+    /*border-left: solid 3px #ffa000;*/
+    border-left: solid 3px #cecece;
+}
+
+td.cell-index.pending-cell {
+    /*background: #ffe7c0;*/
+    background: #dedede;
+}
+
+p.cell-index.pending-cell {
+    /*color: #ffa000;*/
+    color: #3b4151;
+}
+
+/*
+ * Running state
+ */
+table.cell.inactive-cell.running-cell {
+    /*border-left: solid 3px #43a047;*/
+    border-left: solid 3px #3b4151;
+}
+
+td.cell-index.running-cell {
+     /*background: #c5dbc6;*/
+     background: #dedede;
+}
+
+p.cell-index.running-cell {
+    /*color: #00a007;*/
+    color: #3b4151;
+}
+
+/* Command text */
+
+pre.cell-cmd-text {
+    background: #fff;
+    /*border-radius: 2px;
+    border: solid 1px #d0d0d0;*/
+    color: #303f9f;
+    cursor: pointer;
+    margin: 0px;
+    max-width: 1050px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+pre.cell-cmd-error {
+    background: #f2dede;
+    border-radius: 2px;
+    border: solid 1px #ebccd1;
+    color: #843534;
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+pre.cell-vizual {
+    background: #fcfaf8;
+    border-radius: 2px;
+    border: solid 1px #f2f0ed;
+    color: #000;
+    padding: 5px 10px;
+    margin: 0px;
+    line-height: 1.5em;
+}
+
+pre.cell-vizual-error {
+    background: #f2dede;
+    border-radius: 2px;
+    border: solid 1px #ebccd1;
+    color: #843534;
+    padding: 5px 10px;
+    margin: 0px;
+    line-height: 1.5em;
+}
+
+
+div.cell-command-area {
+    padding-left: 10px;
+    max-width: 1050px;
+}
+
+div.module-form-buttons {
+    padding-top: 10px;
+    text-align: right;
+}
+
+
+/* Output Header */
+div.output-header {
+    color: #3b4151;
+    border-spacing: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+span.header-name {
+    letter-spacing: 2px;
+    padding-left: 5px;
+}
+
+/* Outputs */
+
+div.output-content {
+    padding-left: 10px;
+    margin-top: 10px;
+    max-width: 1050px;
+}
+
+div.output-error {
+    padding-left: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+}
+
+div.output-content-html {
+    padding-left: 10px;
+	text-align: center;
+}
+
+div.module-timings {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+div.output-loading {
+    padding-left: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+p.output-info-headline {
+    border-bottom: solid 1px #3b4151;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+span.output-info-headline {
+    font-weight: bold;
+    color: #3b4151;
+}
+
+div.dataset {
+    background: #00ff00;
+    position: 'relative';
+    overflow: 'hidden';
+    width: '100%';
+    height: '100%';
+}
+
+pre.plain-text {
+    padding: 10px 10px 0px 10px;
+    margin: 0px;
+}
+
+pre.error-text {
+    color: #912d2b;
+    padding: 10px 10px 0px 0px;
+    margin: 0px;
+    max-width: 1000px;
+}
+
+i.annotations-icon {
+	float: right;
+	pointer-events: all !important;
+	cursor: pointer;
+}
+
+div.cell-output-links {
+	width:100%;
+	display: flex;
+    flex-direction: row-reverse;
+}
+
+.iframe-container {
+	display:inline-block;
+}
+ 
+.iframe-container iframe {
+	border: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.empxCalc {
+	height:0;
+	width:0;
+	outline:none;
+	border:none;
+	padding:none;
+	margin:none;
+	box-sizing:content-box;
+}
+ 

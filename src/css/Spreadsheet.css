@@ -1,0 +1,183 @@
+div.spreadsheet-main-container {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    color: #3b4151;
+    padding: 20px 20px;
+}
+
+div.spreadsheet-main-container .dimmable {
+    overflow-x: scroll;
+}
+
+h1.dataset-name {
+    font-size: 1.5em;
+}
+
+.is-null {
+    background: #f8f8f8;
+}
+
+div.spreadsheet-container {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+div.spreadsheet-table-container {
+    background: #e8e8e8;
+    overflow-x: auto;
+}
+
+table.spreadsheet {
+    background: #cecece;
+    border-spacing: 1px;
+    color: #3b4151;
+    font-size: 12px;
+    table-layout: fixed;
+    min-width: 100%;
+    /*max-width: 1025px;
+    display: block;*/
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+td.grid-row-index {
+    background: #dedede;
+    /*border: 2px solid transparent; */
+    padding-top: 0px;
+    padding-bottom: 0px;
+    /* margin-top: 0px; */
+    /* margin-bottom: 0px; */
+    padding-right: 8px;
+    text-align: right;
+    width: 50px;
+    white-space: nowrap;
+}
+
+td.grid-cell {
+    background: #fff;
+    border: 2px solid transparent;
+}
+
+td.grid-cell.active {
+    background: #fff;
+    border: 2px solid #4285f4;
+}
+
+td.grid-cell.highlight {
+    /*background: #eff2fc;
+    color: #1e22aa;*/
+    background: #fff;
+    color: #e4002b;
+}
+
+td.grid-cell.is-null {
+    background: #f8f8f8;
+    border: 2px solid transparent;
+}
+
+td.grid-cell.updating {
+    background: #fff;
+    border: 2px solid transparent;
+    color: #888;
+}
+
+th.grid-header {
+    height: 20px;
+    background: #dedede;
+    border: 2px solid transparent;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+th.grid-header.active {
+    height: 20px;
+    background: #f3f3f3;
+    border: 2px solid #4acda7;
+}
+
+th.grid-header.updating {
+    height: 20px;
+    background: #f3f3f3;
+    border: 2px solid transparent;
+    color: #888;
+}
+
+div.drop-before {
+	float: left;
+}
+
+div.drop-after {
+	float: right;
+}
+
+div.row-drop-before {
+	height:4px;
+}
+
+div.row-drop-after {
+	height: 4px;
+}
+
+div.row-index-content {
+	display:inline-block;
+}
+
+.header-drop-target {
+	opacity: 0.0 !important;
+}
+
+.row-index-drop-target {
+	opacity: 0.0 !important;
+}
+
+div.header-container {
+	display: inline-block;
+}
+
+div.header-drop {
+	width: 15px;
+	height: 3em%;
+}
+
+div.cell-value {
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+
+/* INPUT */
+
+.spreadsheet-input {
+    resize: none;
+    height: 100%;
+    /*width: 100%;*/
+    border: 0px;
+    border-radius: 0;
+    font-size: 12px;
+    outline: none;
+    /*overflow: auto;*/
+    font-family: Arial;
+    background: transparent;
+    text-overflow: ellipsis;
+    max-width: fit-content;
+}
+
+
+/* NAVBAR */
+
+div.navbar-container {
+    margin-top: 5px;
+}
+
+span.notification {
+    color: #12bc00;
+    font-size: 0.8em;
+    margin-top: 5px;
+    padding-left: 10px;
+}

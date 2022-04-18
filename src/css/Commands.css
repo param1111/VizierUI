@@ -1,0 +1,17 @@
+.suggested-action {
+    font-weight: bold;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+div.commands-listing {
+    padding-left: 10px;
+}
+
+div.commands-listing-header {
+    color: #888;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+}

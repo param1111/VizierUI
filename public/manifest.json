@@ -1,0 +1,14 @@
+{
+  "short_name": "Vizier",
+  "name": "Vizier, Data Exploration Redefined",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

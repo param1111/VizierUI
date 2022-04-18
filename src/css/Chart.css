@@ -1,0 +1,63 @@
+div.chart-view {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid rgba(34,36,38,.15);
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    padding: 20px 10px;
+    margin-top: 10px;
+}
+
+div.dataset-chart {
+    margin: 0px 20px;
+}
+
+h1.chart-name {
+    font-size: 1.5em;
+}
+
+div.plot {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+div.plot-view {
+    padding: 20px 10px;
+}
+
+div.plot-menu {
+    background: #dedede;
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    font-family: monospace,monospace;
+    font-size: 14px;
+    margin: 10px 0px;
+    padding: 0px 5px;
+}
+
+ul.plot-legend {
+    font-family: monospace,monospace;
+    font-size: 12px;
+}
+
+table.plot-form-table {
+    width: 100%;
+}
+
+td.plot-form-label {
+    width: 70px;
+    padding-right: 10px;
+}
+
+td.plot-form-dropdown {
+    padding-right: 20px;
+    width: 175px;
+}
+
+td.plot-form-check {
+    vertical-align: middle;
+}
+
+div.chart-download-btn {
+    text-align: right;
+    margin-right: 50px;
+}

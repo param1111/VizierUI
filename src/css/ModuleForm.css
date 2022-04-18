@@ -1,0 +1,213 @@
+div.module-form {
+    border-radius: 4px;
+    /*background: #fcfaf8;
+    border: solid 1px #f2f0ed;*/
+    background: rgba(97,175,254,.075);
+    border: 1px solid rgba(97,175,254, .25);
+    padding: 10px 10px 10px 10px;
+    margin: 0px;
+}
+
+div.module-form.error {
+    background: #ffcccc;
+    border: solid 1px #e0b4b4;
+    /*background: rgba(97,175,254,.075);
+    border: 1px solid rgba(97,175,254, .25);*/
+}
+
+p.module-form-header {
+    color: #303f9f;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p.module-form-header.error {
+    color: #843534;
+}
+
+div.file-selector {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid #dedede;
+    /*box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);*/
+    padding: 0px 20px 20px 20px;
+}
+
+div.file-content {
+    background: #fff;
+    border-radius: .28571429rem;
+    border: 1px solid #dedede;
+    text-align: center;
+    padding: 100px;
+    word-break: break-all;
+}
+
+p.file-name{
+    color: #004b87;
+    font-size: 1.5em;
+    padding-bottom: 0px;
+}
+
+div.dropzone-container {
+    width: 100%;
+    height: 200px;
+}
+
+div.dropzone {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+}
+
+.file-name-input {
+    width: 100%;
+}
+.p-dropzone{
+    padding: 10px;
+    text-align: center;
+    padding-top: 40%;
+}
+
+p.upload-info {
+    color: #1e22aa;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 20px;
+}
+
+span.upload-size {
+    font-weight: bold;
+}
+
+/* Form table layout */
+
+table.form-table.wide {
+    width: 100%;
+}
+
+tr.form-options {
+    width: 100%;
+}
+
+tr.form-options-advanced-hidden {
+    display: none;
+    width: 100%;
+}
+
+tr.form-options-advanced {
+    width: 100%;
+}
+
+td.form-label {
+    font-weight: bold;
+    padding-top: 1em;
+    vertical-align: top;
+    width: 100px;
+}
+
+td.form-group-label {
+    font-weight: bold;
+    vertical-align: top;
+    width: 100px;
+}
+
+td.form-constant {
+    border-top: solid 1px rgba(97,175,254, .25);
+    border-bottom: solid 1px rgba(97,175,254, .25);
+    padding-left: 10px;
+}
+
+td.form-control {
+    min-width: 200px;
+}
+
+td.inner-form-header {
+    color: #708cb3;
+    font-size: 0.95em;
+    font-weight: bold;
+    padding: 1em 5px 5px 5px;
+}
+
+td.inner-form-control {
+    min-width: 200px;
+}
+
+td.inner-form-button {
+    text-align: center;
+    width: 50px;
+}
+
+div.form-add-button {
+    margin-top: 10px;
+    text-align: left;
+}
+
+td.inner-form-checkbox {
+    padding-left: 20px;
+}
+
+table.inner-form {
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+/* Checkboxes */
+
+span.boolctrl {
+    padding-left: 10px;
+}
+
+/* Code Editor Form */
+
+div.code-form {
+    margin: 10px 0px;
+}
+
+div.python-examples {
+    font-size: 0.9em;
+    padding: 10px 0px;
+}
+
+div.editor-container {
+    border: solid 1px #dedede;
+    max-width: calc( var(--max-cell-width) - 4em);
+}
+
+div.snippet-header {
+    cursor: pointer;
+}
+
+div.snippet-header.expanded {
+    margin-bottom: 10px;
+}
+
+div.snippet-selector {
+    background: #fff;
+    border: solid 1px #dedede;
+    border-radius: .28571429rem;
+    padding: 10px 10px 10px 20px;
+    margin-top: 10px;
+}
+
+div.ui.labeled.input {
+	width: 100%;
+}
+
+div.ui.labeled.input .field {
+	width: 100%;
+}
+
+div.sql-example-ds-selector {
+	display: inline-block;
+	min-width: 70px;
+}
+
+div.sql-example-list-item {
+	border: 1px dotted lightgray;
+	border-radius: .28571429rem;
+}
+
+.sql-example-a-span {
+	padding: 3px 3px 3px 3px;
+}
