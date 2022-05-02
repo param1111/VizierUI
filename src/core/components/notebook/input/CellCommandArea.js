@@ -82,16 +82,23 @@ class CellCommandArea extends React.Component {
                 newLines: ""
             },
             errors: null,
+            interval: null,
             formValues: values,
             hasErrors: false,
             selectedCommand: cell.commandSpec,
             showCommandsListing: (cell.commandSpec == null),
             snippetSelectorVisible: false,
             upstreamFormValues: false,
-            isOpenEditorClicked: false,
+            isOpenEditorClicked: localStorage.getItem('openEditorClicked') || false,
             submitted: false
         }
     }
+
+    // componentDidUpdate = (prevProps, prevState) => {
+    //     if(prevState.isOpenEditorClicked ){
+    //         this.handleStateForSync();
+    //     }
+    // }
     /**
      * Set this as the active cell (if it isn't yet). This method is intended
      * when a rebdered code editor receives the focus.
@@ -102,6 +109,8 @@ class CellCommandArea extends React.Component {
             onSelectCell(cell);
         }
     }
+
+
 
     intervalForSync = null;
     /**
@@ -243,31 +252,37 @@ class CellCommandArea extends React.Component {
         }
         onResetRecommendations()
     }
-    handleStateForSync = () => {
-        console.log(this.state.isOpenEditorClicked);
+    handleStateForSync = (value) => {
+        localStorage.setItem('openEditorClicked', value)
         this.setState({
-            isOpenEditorClicked : !this.state.isOpenEditorClicked
+            isOpenEditorClicked : value
         });
+        if(!value){
+            localStorage.removeItem('openEditorClicked');
+        }
     }
     /** Added by psingh46
     Dialog box for transferring the data to OS editor */
     handleOpenInEditor = () => {
 
         const{cell, onUpdateProgress} = this.props;
+        let {interval} = this.state;
         this.props.onOpenInEditor(cell,onUpdateProgress);
-        this.handleStateForSync();
-        this.intervalForSync = setInterval(() => {
+        this.handleStateForSync(true);
+        interval = setInterval(() => {
             this.props.syncHandler(cell);
         }, 1000);
-        
+        this.setState({interval});
+        this.props.getIntervalValue(interval);
         //this.props.syncHandler();
         //this.handleSubmitForm();                
     }
 
     handleSyncAction = () => {
-        console.log("test syncing");
-        this.handleStateForSync();
-        clearInterval(this.intervalForSync);
+        const{cell, onUpdateProgress} = this.props;
+        this.props.handleClearInterval();
+        this.props.onCloseAgent(cell, onUpdateProgress);
+        this.handleStateForSync(false);
     }
 
     /**

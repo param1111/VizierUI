@@ -217,6 +217,9 @@ class NotebookCell extends React.Component {
             onOutputSelect,
             onSubmitCell,
             onOpenInEditor,
+            handleClearInterval,
+            getIntervalValue,
+            onCloseAgent,
             syncHandler,
             userSettings,
             onEditSpreadsheet,
@@ -325,6 +328,9 @@ class NotebookCell extends React.Component {
                 onSelectCell={this.handleSelectCell}
                 onSubmit={onSubmitCell}
                 onOpenInEditor={onOpenInEditor}
+                handleClearInterval={handleClearInterval}
+                getIntervalValue={getIntervalValue}
+                onCloseAgent={onCloseAgent}
                 syncHandler={syncHandler}
                 userSettings={userSettings}
                 onResetRecommendations={onResetRecommendations}

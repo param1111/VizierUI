@@ -22,7 +22,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { addFilteredCommand, copyCell, removeFilteredCommand } from '../../actions/main/App';
 import { createBranch, deleteBranch } from '../../actions/project/Branch';
-import { cancelWorkflowExecution, checkModuleStatus, createtNotebookCell,
+import { cancelWorkflowExecution, checkModuleStatus, createtNotebookCell,checkModuleStatusForSync,
     deleteNotebookCell, dismissCellChanges, fetchWorkflow,
     hideCellOutput, insertNotebookCell, replaceNotebookCell, showCellChart,
     selectNotebookCell, showCellDataset, showCellStdout, updateCellDatasetProperties,
@@ -79,6 +79,7 @@ class NotebookPage extends Component {
     constructor(props) {
         super(props);
         // Set the branch modal state
+        
         const copySupport = document.queryCommandSupported('copy');
         this.state = {modalOpen: false, modalTitle: 'New branch', moduleId: null, copySupport:copySupport};
         // Fetch any resources that are currently null or out of sync with the
@@ -349,7 +350,6 @@ class NotebookPage extends Component {
     //Dispatch action to load custom protocol added by psingh46
     handleEditorCell = (cell,data) => {
         let url = null;
-        console.log(cell,data);
         url = cell.module.links.get(HATEOAS_MODULE_REPLACE);
         url = url.replace('http://','');
         url = 'x-vizier-client:opencell/'+url;
@@ -357,10 +357,28 @@ class NotebookPage extends Component {
         window.location.href = url;
     }
 
+    handleInterval = interval => {
+        this.setState({interval});
+        console.log("ibterval at page", interval);
+    }
+
+    handleClearInterval = () => {
+        clearInterval(this.state.interval);
+    }
+
+    handleCloseAgent = (cell, data) => {
+        let url = null;
+        url = cell.module.links.get(HATEOAS_MODULE_REPLACE);
+        url = url.replace('http://','');
+        url = 'x-vizier-client:endcell/'+url;
+        //Fetch the url of the active cell and open agent
+        window.location.href = url;
+    }
+
     //Dispatch handle to Sync the active cell added by psingh46
     handleSyncCell = (cell) => {
         const {notebook, dispatch} = this.props;
-        dispatch(checkModuleStatus(notebook, cell));
+        dispatch(checkModuleStatusForSync(notebook, cell));
     }
 
     handleSubmitCell = (cell, commandSpec, data, onUpdateProgress) => {
@@ -521,6 +539,9 @@ class NotebookPage extends Component {
                     onSelectNotebookCell={this.handleSelectActiveCell}
                     onSubmitCell={this.handleSubmitCell}
                     editorHandler={this.handleEditorCell}
+                    handleClearInterval = {this.handleClearInterval}
+                    getIntervalValue={this.handleInterval}
+                    closeAgentHandler={this.handleCloseAgent}
                     syncHandler={this.handleSyncCell}
                     userSettings={userSettings}
                 	onEditSpreadsheet={this.handleEditSpreadsheet}

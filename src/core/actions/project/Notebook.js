@@ -146,6 +146,49 @@ export const checkModuleStatus = (notebook, cell) => (dispatch) => (
     )
 )
 
+export const checkModuleStatusForSync = (notebook, cell) => (dispatch) => (
+
+    fetchAuthed(notebook.workflow.links.get(HATEOAS_BRANCH_HEAD))(dispatch).then(
+        response => getJson(response, 200),
+        error => dispatch(serviceError(error.message))
+    ).then(
+        json => {
+            fetchAuthed(json.links && json.links[0].href)(dispatch).then(
+                response => getJson(response, 200),
+                error => dispatch(serviceError(error.message))
+            ).then(                
+                            json => (dispatch(updateNotebook(notebook, json, cell.id))),
+                            error => dispatch(workflowFetchError(error.message))
+                        )
+                    }
+                
+            
+
+        
+    //     fetchAuthed(response.links && response.links[0].href)(dispatch).then(
+    //     response1 => getJson(response1, 200),
+    //     error => dispatch(serviceError(error.message))
+    // ).then(
+    //     json => {
+    //         if (json.state !== cell.module.state) {
+    //         	//TODO: hurry up and tell the interval to die in your render loop, react.  
+    //         	//  Nevermind; hacking for now.  FIXIT: soon
+    //         	clearInterval(window.pollingTimer);
+    //         	return fetchAuthed(notebook.workflow.links.get(HATEOAS_BRANCH_HEAD))(dispatch).then(
+    //                 response => getJson(response, 200),
+    //                 error => dispatch(serviceError(error.message))
+    //             ).then(
+    //                 json => (dispatch(updateNotebook(notebook, json, cell.id))),
+    //                 error => dispatch(workflowFetchError(error.message))
+    //             )
+    //         }
+    //     },
+    //     error => dispatch(setNotebookCellError(notebook, cell.module, 'module status', error.message))
+    // )
+        
+    )
+)
+
 
 /**
  * Dismiss any changes that were made to the given cell. Sets the active cell
